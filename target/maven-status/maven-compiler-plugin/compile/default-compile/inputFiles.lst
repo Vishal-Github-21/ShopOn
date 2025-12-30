@@ -1,0 +1,13 @@
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/ShopOnApplication.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/conifg/JpaConfig.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/controller/UserController.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/dto/request/CreateUserRequest.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/dto/request/SendOtpRequest.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/dto/request/UpdateUserRequest.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/dto/request/VerifyOtpRequest.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/dto/response/UserResponse.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/entity/AbstractAuditEntity.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/entity/User.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/exception/UserNotFoundException.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/repository/UserRepository.java
+/Users/vishal_21/Downloads/ShopOn/src/main/java/com/example/shopon/service/UserService.java
