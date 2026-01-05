@@ -2,8 +2,10 @@ package com.example.shopon.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Table(name = "user")
 @Entity
 public class User extends AbstractAuditEntity {
@@ -24,10 +26,17 @@ public class User extends AbstractAuditEntity {
     @Column(nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role = Role.CUSTOMER;
+
     private String otp;
 
     @Column(name = "email_verified", nullable = false)
     private boolean emailVerified;
+
+    @Column(nullable = false)
+    private boolean active = true;
 
     public static interface FullNameStep {
         EmailStep withFullName(String fullName);
@@ -42,19 +51,23 @@ public class User extends AbstractAuditEntity {
     }
 
     public static interface PasswordStep {
-        BuildStep withPassword(String password);
+        RoleStep withPassword(String password);
+    }
+
+    public static interface RoleStep {
+        BuildStep withRole(Role role);
     }
 
     public static interface BuildStep {
         User build();
     }
 
-
-    public static class Builder implements FullNameStep, EmailStep, PhoneNumberStep, PasswordStep, BuildStep {
+    public static class Builder implements FullNameStep, EmailStep, PhoneNumberStep, PasswordStep, RoleStep, BuildStep {
         private String fullName;
         private String email;
         private String phoneNumber;
         private String password;
+        private Role role;
 
         private Builder() {
         }
@@ -82,8 +95,14 @@ public class User extends AbstractAuditEntity {
         }
 
         @Override
-        public BuildStep withPassword(String password) {
+        public RoleStep withPassword(String password) {
             this.password = password;
+            return this;
+        }
+
+        @Override
+        public BuildStep withRole(Role role) {
+            this.role = role;
             return this;
         }
 
@@ -94,6 +113,7 @@ public class User extends AbstractAuditEntity {
             user.setEmail(this.email);
             user.setPhoneNumber(this.phoneNumber);
             user.setPassword(this.password);
+            user.setRole(this.role);
             return user;
         }
     }

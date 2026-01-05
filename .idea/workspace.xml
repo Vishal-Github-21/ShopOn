@@ -5,25 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f89346f-b1cb-4299-a5d0-13fa97af1bcc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/DTO/Request/CreateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/request/CreateUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/DTO/Request/SendOtpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/request/SendOtpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/DTO/Request/UpdateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/request/UpdateUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/DTO/Request/VerifyOtpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/request/VerifyOtpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/DTO/Response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/response/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/Exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ShopOn/ShopOnApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/ShopOnApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopon/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/request/CreateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/request/CreateUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/dto/response/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopon/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shopon/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shopon/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopOn-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/dto/request/CreateUserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/dto/request/CreateUserRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/dto/response/UserResponse$UserResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/dto/response/UserResponse$UserResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/dto/response/UserResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/dto/response/UserResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$BuildStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$BuildStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$EmailStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$EmailStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$FullNameStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$FullNameStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$PasswordStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$PasswordStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$PhoneNumberStep.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User$PhoneNumberStep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/exception/UserNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/exception/UserNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/shopon/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/shopon/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +76,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "userImplimentation",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "userImplementation",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/vishal_21/Downloads/ShopOn",
     "project.structure.last.edited": "Project",
@@ -77,6 +87,11 @@
     "settings.editor.splitter.proportion": "0.24872579"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.shopon.service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ShopOnApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.shopon.ShopOnApplication" />
@@ -121,10 +136,14 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/shopon/controller/UserController.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="3" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/shopon/entity/Product.java</url>
+          <line>89</line>
+          <properties class="com.example.shopon.entity.Product.Builder" method="withName">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,6 +6,8 @@ import com.example.shopon.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,28 +17,32 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
     @PostMapping
     public ResponseEntity<UserResponse> createUser(@RequestBody CreateUserRequest request) {
         return new ResponseEntity<>(userService.createUser(request), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<UserResponse> getUserById(@PathVariable Long id, Authentication authentication) {
+        return ResponseEntity.ok(userService.getUserById(id, authentication.getName()));
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<UserResponse> updateUser(
             @PathVariable Long id,
-            @RequestBody UpdateUserRequest request) {
+            @RequestBody UpdateUserRequest request,
+            Authentication authentication) {
 
-        return ResponseEntity.ok(userService.updateUser(id, request));
+        return ResponseEntity.ok(userService.updateUser(id, request, authentication.getName()));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id, Authentication authentication) {
+
+        userService.deleteUser(id, authentication.getName());
         return ResponseEntity.noContent().build();
     }
 

@@ -3,7 +3,9 @@ package com.example.shopon.service;
 import com.example.shopon.dto.request.CreateUserRequest;
 import com.example.shopon.dto.response.UserResponse;
 import com.example.shopon.dto.request.UpdateUserRequest;
+import com.example.shopon.entity.Role;
 import com.example.shopon.entity.User;
+import com.example.shopon.exception.UnauthorizedAccessException;
 import com.example.shopon.exception.UserNotFoundException;
 import com.example.shopon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,27 +25,56 @@ public class UserService {
             throw new RuntimeException("Email already exists");
         }
 
+        Role userRole = request.getRole() != null ? request.getRole() : Role.CUSTOMER;
+
         User user = User.Builder.user()
                 .withFullName(request.getFullName())
                 .withEmail(request.getEmail())
                 .withPhoneNumber(request.getPhoneNumber())
                 .withPassword(request.getPassword())
+                .withRole(userRole)
                 .build();
         return mapToResponse(userRepository.save(user));
     }
 
-    public UserResponse getUserById(Long id) {
+    public UserResponse getUserById(Long id, String currentUserEmail) {
 
         User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        // Authorization check: user can only view their own profile unless they're
+        // admin
+        User currentUser = userRepository.findByEmail(currentUserEmail)
+                .orElseThrow(() -> new UserNotFoundException("Current user not found"));
+
+        if (!currentUser.getId().equals(id) && currentUser.getRole() != Role.ADMIN) {
+            throw new UnauthorizedAccessException("Access denied: You can only view your own profile");
+        }
+
+        return mapToResponse(user);
+    }
+
+    public UserResponse getUserByEmail(String email) {
+
+        User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
 
         return mapToResponse(user);
     }
 
-    public UserResponse updateUser(Long id, UpdateUserRequest request) {
+    public UserResponse updateUser(Long id, UpdateUserRequest request, String currentUserEmail) {
 
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        // Authorization check: user can only update their own profile unless they're
+        // admin
+        User currentUser = userRepository.findByEmail(currentUserEmail)
+                .orElseThrow(() -> new UserNotFoundException("Current user not found"));
+
+        if (!currentUser.getId().equals(id) && currentUser.getRole() != Role.ADMIN) {
+            throw new UnauthorizedAccessException("Access denied: You can only update your own profile");
+        }
 
         if (request.getFullName() != null) {
             user.setFullName(request.getFullName());
@@ -56,18 +87,34 @@ public class UserService {
         return mapToResponse(userRepository.save(user));
     }
 
-    public void deleteUser(Long id) {
+    public void deleteUser(Long id, String currentUserEmail) {
 
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
 
-        userRepository.delete(user);
+        // Authorization check: user can only delete their own account unless they're
+        // admin
+        User currentUser = userRepository.findByEmail(currentUserEmail)
+                .orElseThrow(() -> new UserNotFoundException("Current user not found"));
+
+        if (!currentUser.getId().equals(id) && currentUser.getRole() != Role.ADMIN) {
+            throw new UnauthorizedAccessException("Access denied: You can only delete your own account");
+        }
+
+        // Soft delete
+        user.setActive(false);
+        userRepository.save(user);
     }
 
     public void sendOtp(String email) {
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+
+        // Check if user is active
+        if (!user.isActive()) {
+            throw new RuntimeException("User account is inactive");
+        }
 
         String otp = String.valueOf(100000 + new Random().nextInt(900000));
 
@@ -81,6 +128,11 @@ public class UserService {
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+
+        // Check if user is active
+        if (!user.isActive()) {
+            throw new RuntimeException("User account is inactive");
+        }
 
         if (user.getOtp() == null || !user.getOtp().equals(otp)) {
             throw new RuntimeException("Invalid OTP");
@@ -100,6 +152,7 @@ public class UserService {
                 .email(user.getEmail())
                 .phoneNumber(user.getPhoneNumber())
                 .emailVerified(user.isEmailVerified())
+                .role(user.getRole())
                 .build();
     }
 }
