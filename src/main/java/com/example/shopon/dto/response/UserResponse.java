@@ -1,5 +1,6 @@
 package com.example.shopon.dto.response;
 
+import com.example.shopon.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,5 +17,6 @@ public class UserResponse {
     private String email;
     private String phoneNumber;
     private boolean emailVerified;
+    private Role role;
 
 }
